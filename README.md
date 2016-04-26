@@ -4,7 +4,7 @@
 ## Included modules
 Each module in this project is designed to work as an independant component. Below is a list of the included modules with links to their individual project pages:
 
-### [RestUp](https://github.com/speedment/fika)
+### [RestUp](https://github.com/speedment/fika/wiki/RestUp)
 A simple API for connecting to an existing REST API:s from Java.
 ```xml
 <dependency>
