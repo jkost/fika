@@ -1,4 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+
+    Copyright (c) 2006-2016, Speedment, Inc. All Rights Reserved.
+
+    Licensed under the Apache License, Version 2.0 (the "License"); You may not
+    use this file except in compliance with the License. You may obtain a copy of
+    the License at:
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+    WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+    License for the specific language governing permissions and limitations under
+    the License.
+
+-->
 <project xmlns="http://maven.apache.org/POM/4.0.0" 
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -16,47 +34,47 @@
     <name>Fika</name>
     <description>
         Fika is a Swedish word that means "Coffee with something to it", and
-		that is exactly what this project is about - general purpose modules
-		for various Java projects.
+        that is exactly what this project is about - general purpose modules
+        for various Java projects.
     </description>
 	
-	<properties>
+    <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
 	
-	<scm>
+    <scm>
         <connection>scm:git:git://github.com/speedment/fika.git</connection>
         <developerConnection>scm:git:git@github.com:speedment/fika.git</developerConnection>
         <url>git@github.com:speedment/fika.git</url>
     </scm>
 	
-	<issueManagement>
+    <issueManagement>
         <system>Github</system>
         <url>https://github.com/speedment/fika/issues</url>
     </issueManagement>
 	
-	<licenses>
+    <licenses>
         <license>
             <name>Apache License, Version 2.0</name>
             <url>http://www.apache.org/licenses/LICENSE-2.0</url>
             <distribution>repo</distribution>
         </license>
     </licenses>
-	
-	<distributionManagement>
+
+    <distributionManagement>
         <snapshotRepository>
-            <id>ossrh</id>
+            <id>sonatype-nexus-snapshots</id>
             <url>https://oss.sonatype.org/content/repositories/snapshots</url>
         </snapshotRepository>
         <repository>
-            <id>ossrh</id>
+            <id>sonatype-nexus-staging</id>
             <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
         </repository>
     </distributionManagement>
 	
-	<build>
+    <build>
         <plugins> 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -73,7 +91,7 @@
     
     <profiles>
         <profile> 
-            <id>ossrh</id>
+            <id>release</id>
             <build>
                 <plugins>
                     <plugin>
@@ -152,11 +170,23 @@
                             <executable>${gpg.executable}</executable>
                         </configuration>
                     </plugin>
+                    
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-deploy-plugin</artifactId>
+                        <version>2.8.2</version>
+                        <configuration>
+                            <!-- Deployment is already handled by nexus-staging-maven-plugin -->
+                            <skip>true</skip>
+                        </configuration>
+                    </plugin>
+                    
                     <plugin>
                         <groupId>org.sonatype.plugins</groupId>
                         <artifactId>nexus-staging-maven-plugin</artifactId>
                         <version>1.6.3</version>
                         <extensions>true</extensions>
+                        
                         <executions>
                             <execution>
                                 <id>default-deploy</id>
@@ -166,8 +196,9 @@
                                 </goals>
                             </execution>
                         </executions>
+                        
                         <configuration>
-                            <serverId>ossrh</serverId>
+                            <serverId>sonatype-nexus-staging</serverId>
                             <nexusUrl>https://oss.sonatype.org/</nexusUrl>
                             <autoReleaseAfterClose>true</autoReleaseAfterClose>
                         </configuration>
