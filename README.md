@@ -1,4 +1,7 @@
 # Fika
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.speedment.fika/fika/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.speedment.fika/fika)
+[![Hex.pm](https://img.shields.io/hexpm/l/plug.svg?maxAge=2592000)]()
+
 "Fika" is a Swedish word that means "Coffee with something to it", and that is exactly what this project is about - a collection of general purpose modules for various Java projects.
 
 ## Included modules
