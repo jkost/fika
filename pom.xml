@@ -27,23 +27,49 @@
     <version>1.0.0</version>
     <packaging>pom</packaging>
     
+    <!-- Modules -->
     <modules>
         <module>restup</module>
     </modules>
     
+    <!-- Project Metadata -->
     <name>Fika</name>
     <description>
         Fika is a Swedish word that means "Coffee with something to it", and
         that is exactly what this project is about - general purpose modules
         for various Java projects.
     </description>
+    
+    <organization>
+        <name>Speedment, Inc.</name>
+        <url>http://www.speedment.com/</url>
+    </organization>
+    
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+    
+    <developers>
+        <developer>
+            <name>Emil Forslund</name>
+            <email>emil@speedment.com</email>
+            <organization>Speedment</organization>
+            <organizationUrl>http://www.speedment.org</organizationUrl>
+        </developer>
+    </developers>
 	
+    <!-- Properties -->
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
 	
+    <!-- Distribution Details -->
     <scm>
         <connection>scm:git:git://github.com/speedment/fika.git</connection>
         <developerConnection>scm:git:git@github.com:speedment/fika.git</developerConnection>
@@ -55,14 +81,6 @@
         <url>https://github.com/speedment/fika/issues</url>
     </issueManagement>
 	
-    <licenses>
-        <license>
-            <name>Apache License, Version 2.0</name>
-            <url>http://www.apache.org/licenses/LICENSE-2.0</url>
-            <distribution>repo</distribution>
-        </license>
-    </licenses>
-
     <distributionManagement>
         <snapshotRepository>
             <id>sonatype-nexus-snapshots</id>
@@ -74,6 +92,7 @@
         </repository>
     </distributionManagement>
 	
+    <!-- Plugins -->
     <build>
         <plugins> 
             <plugin>
