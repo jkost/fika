@@ -41,6 +41,7 @@
     <modules>
         <module>restup</module>
         <module>reactor</module>
+        <module>mapstream</module>
     </modules>
     
     <!-- Project Metadata -->
