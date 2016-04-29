@@ -34,12 +34,13 @@
     
     <groupId>com.speedment.fika</groupId>
     <artifactId>fika</artifactId>
-    <version>1.0.1-SNAPSHOT</version>
+    <version>1.0.1</version>
     <packaging>pom</packaging>
     
     <!-- Modules -->
     <modules>
         <module>restup</module>
+        <module>reactor</module>
     </modules>
     
     <!-- Project Metadata -->
