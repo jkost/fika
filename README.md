@@ -8,9 +8,19 @@ Each module in this project is designed to work as an independant component. Bel
 A simple API for connecting to an existing REST API:s from Java.
 ```xml
 <dependency>
-    <groupId>com.speedment</groupId>
-    <artifactId>fika-restup</artifactId>
+    <groupId>com.speedment.fika</groupId>
+    <artifactId>restup</artifactId>
     <version>1.0.1</version>
+</dependency>
+```
+
+### [Reactor](https://github.com/speedment/fika/wiki/Reactor)
+An extension to [Speedment](https://github.com/speedment/speedment) that polls the database at a regular interval to produce a materialized object view (MOV) of a particular table.
+```xml
+<dependency>
+    <groupId>com.speedment.fika</groupId>
+    <artifactId>reactor</artifactId>
+    <version>1.0.0</version>
 </dependency>
 ```
 
