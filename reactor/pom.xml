@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    
+    <parent>
+        <groupId>com.speedment.fika</groupId>
+        <artifactId>fika</artifactId>
+        <version>1.0.1-SNAPSHOT</version>
+    </parent>
+    
+    <artifactId>reactor</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+    
+    <name>Fika - Reactor</name>
+    <description>
+        An extension to Speedment Open Source that reguraly polls the database
+        for updates to produce a materialized object view (MOV) of a table.
+    </description>
+    <url>https://www.github.com/speedment/fika/wiki/Reactor/</url>
+
+    <properties>
+        <speedment.version>2.3.2</speedment.version>
+    </properties>
+
+    <developers>
+        <developer>
+            <name>Emil Forslund</name>
+            <email>emil@speedment.com</email>
+            <organization>Speedment</organization>
+            <organizationUrl>http://www.speedment.org</organizationUrl>
+        </developer>
+    </developers>
+    
+    <dependencies>
+        <dependency>
+            <groupId>com.speedment</groupId>
+            <artifactId>speedment</artifactId>
+            <version>${speedment.version}</version>
+        </dependency>
+    </dependencies>
+</project>

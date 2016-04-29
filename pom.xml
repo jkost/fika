@@ -40,6 +40,7 @@
     <!-- Modules -->
     <modules>
         <module>restup</module>
+        <module>reactor</module>
     </modules>
     
     <!-- Project Metadata -->
