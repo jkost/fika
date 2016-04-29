@@ -14,7 +14,7 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
-package com.github.pyknic.restup;
+package com.speedment.fika.restup;
 
 /**
  * A query parameter that will become part of the command URL.

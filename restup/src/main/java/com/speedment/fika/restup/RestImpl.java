@@ -14,11 +14,11 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
-package com.github.pyknic.restup;
+package com.speedment.fika.restup;
 
-import static com.github.pyknic.restup.Option.Type.HEADER;
-import static com.github.pyknic.restup.Option.Type.PARAM;
-import static com.github.pyknic.restup.Rest.encode;
+import static com.speedment.fika.restup.Option.Type.HEADER;
+import static com.speedment.fika.restup.Option.Type.PARAM;
+import static com.speedment.fika.restup.Rest.encode;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;

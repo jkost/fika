@@ -14,7 +14,7 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
-package com.github.pyknic.restup;
+package com.speedment.fika.restup;
 
 import java.util.Objects;
 import static java.util.Objects.requireNonNull;

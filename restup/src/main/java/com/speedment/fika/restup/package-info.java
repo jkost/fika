@@ -17,4 +17,4 @@
 /**
  * The base package of RestUp.
  */
-package com.github.pyknic.restup;
+package com.speedment.fika.restup;
