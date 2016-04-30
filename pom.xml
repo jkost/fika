@@ -41,6 +41,7 @@
     <modules>
         <module>restup</module>
         <module>reactor</module>
+        <module>lazy</module>
     </modules>
     
     <!-- Project Metadata -->
@@ -70,6 +71,15 @@
             <email>emil@speedment.com</email>
             <organization>Speedment</organization>
             <organizationUrl>http://www.speedment.org</organizationUrl>
+            <timezone>America/Los_Angeles</timezone>
+        </developer>
+        <developer>
+            <id>Minborg</id>
+            <name>Per Ake Minborg</name>
+            <email>minborg@speedment.com</email>
+            <organization>Speedment</organization>
+            <organizationUrl>http://www.speedment.org</organizationUrl>
+            <timezone>America/Los_Angeles</timezone>
         </developer>
     </developers>
 	
