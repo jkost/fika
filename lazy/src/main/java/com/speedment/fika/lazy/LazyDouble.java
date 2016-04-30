@@ -24,7 +24,7 @@ import java.util.function.DoubleSupplier;
  *
  * This class is thread safe. The Supplier is guaranteed to be called exactly
  * one time following one or several calls to 
- * {@link  #getOrCompute(java.util.function.Supplier) } by any number of
+ * {@link  #getOrCompute(java.util.function.DoubleSupplier) } by any number of
  * threads.
  *
  * @author Per Minborg
