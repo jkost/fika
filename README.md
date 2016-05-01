@@ -27,6 +27,17 @@ An extension to [Speedment](https://github.com/speedment/speedment) that polls t
 </dependency>
 ```
 
+
+### [Lazy](https://github.com/speedment/fika/wiki/Lazy)
+An utility used in [Speedment](https://github.com/speedment/speedment) that can be used for lazy initialization. It contains a generic ```Lazy&gt;T&lt;``` class, specialized Lazy classes for the primitive classes (```LazyInt```, ```LazyLong``` and ```LazyDouble``) and a number of specialized Lazy classes including LazyString, LazyBooelan, LazyByte, LazyShort and many more. 
+```xml
+<dependency>
+    <groupId>com.speedment.fika</groupId>
+    <artifactId>lazy</artifactId>
+    <version>1.0.0</version>
+</dependency>
+```
+
 ## License
 All the modules in this project are available under [the Apache 2 license](http://www.apache.org/licenses/LICENSE-2.0). 
 Attribution should be done to Speedment, Inc.
