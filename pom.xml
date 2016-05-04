@@ -42,6 +42,7 @@
         <module>restup</module>
         <module>reactor</module>
         <module>lazy</module>
+        <module>mapstream</module>
     </modules>
     
     <!-- Project Metadata -->
