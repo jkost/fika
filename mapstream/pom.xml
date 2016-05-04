@@ -26,20 +26,16 @@
         <version>1.0.2</version>
     </parent>
     
-    <artifactId>reactor</artifactId>
-    <version>1.0.0</version>
+    <artifactId>mapstream</artifactId>
+    <version>2.3.2</version>
     <packaging>jar</packaging>
     
-    <name>Fika - Reactor</name>
+    <name>Fika - MapStream</name>
     <description>
-        An extension to Speedment Open Source that reguraly polls the database
-        for updates to produce a materialized object view (MOV) of a table.
+        An extension of the Java 8 Stream API to make it possible to stream over
+        key-value pairs more easily.
     </description>
-    <url>https://www.github.com/speedment/fika/wiki/Reactor/</url>
-
-    <properties>
-        <speedment.version>2.3.2</speedment.version>
-    </properties>
+    <url>https://www.github.com/speedment/fika/wiki/MapStream/</url>
 
     <developers>
         <developer>
@@ -48,13 +44,12 @@
             <organization>Speedment</organization>
             <organizationUrl>http://www.speedment.org</organizationUrl>
         </developer>
+        
+        <developer>
+            <name>Per Minborg</name>
+            <email>minborg@speedment.com</email>
+            <organization>Speedment</organization>
+            <organizationUrl>http://www.speedment.org</organizationUrl>
+        </developer>
     </developers>
-    
-    <dependencies>
-        <dependency>
-            <groupId>com.speedment</groupId>
-            <artifactId>speedment</artifactId>
-            <version>${speedment.version}</version>
-        </dependency>
-    </dependencies>
 </project>
