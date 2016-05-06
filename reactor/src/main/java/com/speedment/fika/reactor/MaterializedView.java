@@ -81,8 +81,7 @@ public class MaterializedView<ENTITY, T extends Comparable<T>> implements Consum
     public final void accept(List<ENTITY> events) {
         events.forEach(entity -> {
             view.compute(field.get(entity), 
-                (key, existing) -> existing == null 
-                    ? entity : merge(existing, entity)
+                (key, existing) -> merge(existing, entity)
             );
         });
     }
@@ -112,8 +111,11 @@ public class MaterializedView<ENTITY, T extends Comparable<T>> implements Consum
      * be either one of the two or a completely new one. This method is 
      * guaranteed to be called in order, merging each entity with the 
      * immediately preceeding one.
+     * <p>
+     * If the returned value is {@code null}, the entity will be removed from
+     * the view.
      * 
-     * @param existing  the existing entity
+     * @param existing  the existing entity (can be null)
      * @param loaded    the loaded entity
      * @return          the one entity to remember in the view
      */
