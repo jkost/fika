@@ -28,6 +28,7 @@ import java.util.Set;
 import java.util.Timer;
 import java.util.TimerTask;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.function.Consumer;
 import static java.util.stream.Collectors.toList;
@@ -162,40 +163,49 @@ public final class Reactor<ENTITY> {
          * @return  the running reactor
          */
         public Reactor<ENTITY> build() {
+            
+            final AtomicBoolean working = new AtomicBoolean(false);
+            final AtomicLong last = new AtomicLong(Long.MIN_VALUE);
+            final String managerName = manager.getTable().getName();
+            final String fieldName = idField.getIdentifier().columnName();
+            
             final Timer timer = new Timer();
             final TimerTask task = new TimerTask() {
                 @Override
                 public void run() {
-                    final AtomicLong last = new AtomicLong(Long.MIN_VALUE);
-                    final String managerName = manager.getTable().getName();
-                    final String fieldName = idField.getIdentifier()
-                        .columnName();
-                
-                    while (true) {
-                        final List<ENTITY> added = unmodifiableList(
-                            manager.stream()
-                                .filter(idField.greaterThan(last.get()))
-                                .limit(limit)
-                                .collect(toList())
-                        );
+                    if (working.compareAndSet(false, true)) {
+                        try {
+                            while (true) {
+                                final List<ENTITY> added = unmodifiableList(
+                                    manager.stream()
+                                        .filter(idField.greaterThan(last.get()))
+                                        .limit(limit)
+                                        .sorted(idField.comparator())
+                                        .collect(toList())
+                                );
 
-                        if (added.isEmpty()) {
-                            break;
-                        } else {
-                            final ENTITY lastEntity = added.get(added.size() - 1);
-                            last.set(idField.get(lastEntity));
-                            
-                            listeners.forEach(
-                                listener -> listener.accept(added)
-                            );
-                            
-                            LOGGER.debug(String.format(
-                                "Downloaded %d row(s) from %s. Latest %s: %d.", 
-                                added.size(),
-                                managerName,
-                                fieldName,
-                                last.get()
-                            ));
+                                if (added.isEmpty()) {
+                                    break;
+                                } else {
+                                    final ENTITY lastEntity = added.get(added.size() - 1);
+                                    last.set(idField.get(lastEntity));
+
+                                    listeners.forEach(
+                                        listener -> listener.accept(added)
+                                    );
+
+                                    LOGGER.debug(String.format(
+                                        "%s: Downloaded %d row(s) from %s. Latest %s: %d.", 
+                                        System.identityHashCode(last),
+                                        added.size(),
+                                        managerName,
+                                        fieldName,
+                                        last.get()
+                                    ));
+                                }
+                            }
+                        } finally {
+                            working.set(false);
                         }
                     }
                 }
