@@ -34,7 +34,7 @@
     
     <groupId>com.speedment.fika</groupId>
     <artifactId>fika</artifactId>
-    <version>1.0.3</version>
+    <version>1.0.4-SNAPSHOT</version>
     <packaging>pom</packaging>
     
     <!-- Modules -->
