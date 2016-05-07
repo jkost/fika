@@ -7,6 +7,16 @@
 ## Included modules
 Each module in this project is designed to work as an independant component. Below is a list of the included modules with links to their individual project pages:
 
+### [CodeGen](https://github.com/speedment/fika/wiki/CodeGen)
+An object-oriented code generator for Java that is built using the Model-View-Controller (MVC) design philosophy.
+```xml
+<dependency>
+    <groupId>com.speedment.fika</groupId>
+    <artifactId>codegen</artifactId>
+    <version>2.4.0</version>
+</dependency>
+```
+
 ### [Lazy](https://github.com/speedment/fika/wiki/Lazy)
 An utility used in [Speedment](https://github.com/speedment/speedment) that can be used for lazy initialization. It contains a generic ```Lazy<T>``` class, specialized Lazy classes for some primitive classes (```LazyInt```, ```LazyLong``` and ```LazyDouble```) and a number of specialized Lazy classes including ```LazyString```, ```LazyBooelan```, ```LazyByte```, ```LazyShort``` and many more. 
 ```xml
@@ -43,7 +53,7 @@ An extension to [Speedment](https://github.com/speedment/speedment) that polls t
 <dependency>
     <groupId>com.speedment.fika</groupId>
     <artifactId>reactor</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
 </dependency>
 ```
 
