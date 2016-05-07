@@ -34,7 +34,7 @@
     
     <groupId>com.speedment.fika</groupId>
     <artifactId>fika</artifactId>
-    <version>1.0.4-SNAPSHOT</version>
+    <version>1.0.5-SNAPSHOT</version>
     <packaging>pom</packaging>
     
     <!-- Modules -->
@@ -43,6 +43,7 @@
         <module>reactor</module>
         <module>lazy</module>
         <module>mapstream</module>
+        <module>codegen</module>
     </modules>
     
     <!-- Project Metadata -->
@@ -149,6 +150,7 @@
                                 <exclude>**/LICENSE</exclude>
                                 <exclude>**/nbactions.xml</exclude>
                                 <exclude>**/nb-configuration.xml</exclude>
+                                <exclude>**/package-info.java</exclude>
                                 <exclude>src/test/resources/**</exclude>
                                 <exclude>src/main/resources/**</exclude>
                             </excludes>
