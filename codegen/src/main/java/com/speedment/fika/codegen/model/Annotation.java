@@ -37,9 +37,8 @@ public interface Annotation extends HasCopy<Annotation>, HasName<Annotation>,
     AnnotationModifier<Annotation>, HasAnnotationUsage<Annotation> {
 
     /**
-     * Creates a new instance implementing this interface by using the class
-     * supplied by the default factory. To change implementation, please use the
-     * {@link #setSupplier(java.util.function.Function) setSupplier} method.
+     * Creates a new instance implementing this interface using the default
+     * implementation.
      *
      * @param name the name
      * @return the new instance

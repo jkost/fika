@@ -34,9 +34,8 @@ public interface File extends HasCopy<File>, HasName<File>,
     HasJavadoc<File>, HasImports<File>, HasClasses<File>, HasCall<File> {
 
     /**
-     * Creates a new instance implementing this interface by using the class
-     * supplied by the default factory. To change implementation, please use the
-     * {@link #setSupplier(java.util.function.Function) setSupplier} method.
+     * Creates a new instance implementing this interface by using the default
+     * implementation.
      *
      * @param name the name
      * @return the new instance

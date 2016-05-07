@@ -47,20 +47,18 @@ public interface Javadoc extends HasCopy<Javadoc>, HasCall<Javadoc>,
     String getText();
 
     /**
-     * Creates a new instance implementing this interface by using the class
-     * supplied by the default factory. To change implementation, please use
-     * the {@link #setSupplier(java.util.function.Supplier) setSupplier} method.
+     * Creates a new instance implementing this interface by using the default
+     * implementation.
 
-     * @return      the new instance
+     * @return  the new instance
      */
     static Javadoc of() {
         return new JavadocImpl();
     }
     
     /**
-     * Creates a new instance implementing this interface by using the class
-     * supplied by the default factory. To change implementation, please use
-     * the {@link #setSupplier(java.util.function.Supplier) setSupplier} method.
+     * Creates a new instance implementing this interface by using the default
+     * implementation.
      * 
      * @param text  the documentation
      * @return      the new instance

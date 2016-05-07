@@ -139,9 +139,8 @@ public interface Generic extends HasCopy<Generic> {
     Optional<Type> asType();
 
     /**
-     * Creates a new instance implementing this interface by using the class
-     * supplied by the default factory. To change implementation, please use the
-     * {@link #setMapper(Supplier) setSupplier} method.
+     * Creates a new instance implementing this interface by using the default
+     * implementation.
      *
      * @return the new instance
      */
@@ -150,9 +149,8 @@ public interface Generic extends HasCopy<Generic> {
     }
     
     /**
-     * Creates a new instance implementing this interface by using the class
-     * supplied by the default factory. To change implementation, please use the
-     * {@link #setMapper(Supplier) setSupplier} method.
+     * Creates a new instance implementing this interface by using the default
+     * implementation.
      *
      * @param lowerBound  the lower bound, example: {@code "T"}
      * @return the new instance
@@ -162,9 +160,8 @@ public interface Generic extends HasCopy<Generic> {
     }
     
     /**
-     * Creates a new instance implementing this interface by using the class
-     * supplied by the default factory. To change implementation, please use the
-     * {@link #setMapper(Supplier) setSupplier} method.
+     * Creates a new instance implementing this interface by using the default
+     * implementation.
      *
      * @param upperBound the upper bound, example: {@code "String"}
      * @return the new instance

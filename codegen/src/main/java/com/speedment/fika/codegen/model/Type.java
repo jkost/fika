@@ -77,9 +77,8 @@ public interface Type extends HasCopy<Type>, HasName<Type>, HasGenerics<Type>,
     int getArrayDimension();
 
     /**
-     * Creates a new instance implementing this interface by using the class
-     * supplied by the default factory. To change implementation, please use
-     * the {@link #setMapper(Function)} method.
+     * Creates a new instance implementing this interface by using the default
+     * implementation.
      * 
      * @param name  the type name
      * @return      the new instance
@@ -89,9 +88,8 @@ public interface Type extends HasCopy<Type>, HasName<Type>, HasGenerics<Type>,
     }
 
     /**
-     * Creates a new instance implementing this interface by using the class
-     * supplied by the default factory. To change implementation, please use
-     * the {@link #setMapper(Function)} method.
+     * Creates a new instance implementing this interface by using the default
+     * implementation.
      * 
      * @param clazz  the java implementation
      * @return       the new instance

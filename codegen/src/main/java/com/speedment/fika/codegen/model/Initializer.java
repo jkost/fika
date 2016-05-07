@@ -32,11 +32,10 @@ public interface Initializer extends HasCopy<Initializer>, HasCall<Initializer>,
     HasCode<Initializer>, InitalizerModifier<Initializer> {
 
     /**
-     * Creates a new instance implementing this interface by using the class
-     * supplied by the default factory. To change implementation, please use
-     * the {@link #setSupplier(java.util.function.Supplier) setSupplier} method.
+     * Creates a new instance implementing this interface by using the default
+     * implementation.
 
-     * @return      the new instance
+     * @return  the new instance
      */
     static Initializer of() {
         return new InitializerImpl();

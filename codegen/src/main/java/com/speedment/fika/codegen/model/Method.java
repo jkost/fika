@@ -40,9 +40,8 @@ public interface Method extends HasName<Method>, HasType<Method>, HasThrows<Meth
     HasCode<Method>, HasCall<Method>, MethodModifier<Method>, HasCopy<Method> {
 
     /**
-     * Creates a new instance implementing this interface by using the class
-     * supplied by the default factory. To change implementation, please use the
-     * {@link #setMapper(java.util.function.BiFunction) setSupplier} method.
+     * Creates a new instance implementing this interface by using the default
+     * implementation.
      *
      * @param name the name
      * @param type the type

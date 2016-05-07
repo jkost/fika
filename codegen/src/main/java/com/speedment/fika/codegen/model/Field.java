@@ -38,9 +38,8 @@ public interface Field extends HasCopy<Field>, HasCall<Field>, HasName<Field>,
     FieldModifier<Field> {
 
     /**
-     * Creates a new instance implementing this interface by using the class
-     * supplied by the default factory. To change implementation, please use the
-     * {@link #setMapper(java.util.function.BiFunction) setSupplier} method.
+     * Creates a new instance implementing this interface by using the default
+     * implementation.
      *
      * @param name the name
      * @param type the type

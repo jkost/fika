@@ -31,9 +31,8 @@ public interface Class extends ClassOrInterface<Class>, HasConstructors<Class>,
     HasSupertype<Class>, ClassModifier<Class> {
 
     /**
-     * Creates a new instance implementing this interface by using the class
-     * supplied by the default factory. To change implementation, please use the
-     * {@link #setMapper(java.util.function.Function) setSupplier} method.
+     * Creates a new instance implementing this interface by using the default
+     * implementation.
      *
      * @param name the name
      * @return the new instance

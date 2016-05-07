@@ -85,9 +85,8 @@ public interface JavadocTag extends HasCopy<JavadocTag>, HasName<JavadocTag>,
     Optional<String> getText();
 
     /**
-     * Creates a new instance implementing this interface by using the class
-     * supplied by the default factory. To change implementation, please use the
-     * {@link #setSupplier(java.util.function.Function) setSupplier} method.
+     * Creates a new instance implementing this interface by using the default
+     * implementation.
      *
      * @param name the name
      * @return the new instance
@@ -97,9 +96,8 @@ public interface JavadocTag extends HasCopy<JavadocTag>, HasName<JavadocTag>,
     }
 
     /**
-     * Creates a new instance implementing this interface by using the class
-     * supplied by the default factory. To change implementation, please use the
-     * {@link #setSupplier(java.util.function.Function) setSupplier} method.
+     * Creates a new instance implementing this interface by using the default
+     * implementation.
      *
      * @param name the name
      * @param text the text
@@ -110,9 +108,8 @@ public interface JavadocTag extends HasCopy<JavadocTag>, HasName<JavadocTag>,
     }
 
     /**
-     * Creates a new instance implementing this interface by using the class
-     * supplied by the default factory. To change implementation, please use the
-     * {@link #setSupplier(java.util.function.Function) setSupplier} method.
+     * Creates a new instance implementing this interface by using the default
+     * implementation.
      *
      * @param name the name
      * @param value the value
