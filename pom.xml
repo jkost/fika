@@ -44,6 +44,7 @@
         <module>lazy</module>
         <module>mapstream</module>
         <module>codegen</module>
+        <module>logger</module>
     </modules>
     
     <!-- Project Metadata -->
