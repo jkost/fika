@@ -35,7 +35,6 @@ import java.util.stream.Stream;
  */
 public final class TextUtil {
 
-    //private static final Pattern WORDS = Pattern.compile("[\\.,\\s!;?:\"]+");
     private static final Pattern WORDS = Pattern.compile("[\\s]+");
     private static final Pattern JAVADOC_WORDS = Pattern.compile("[\\s]+"); // Text within html tags "pre" are treated as one "word"
     private static final String NL = "\n";

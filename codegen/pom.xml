@@ -28,11 +28,42 @@
     
     <artifactId>codegen</artifactId>
     <version>2.4.1-SNAPSHOT</version>
-    <packaging>jar</packaging>
+    <packaging>bundle</packaging>
     
     <name>Fika - CodeGen</name>
     <description>
         An object-oriented code generator for Java that is built using the 
         Model-View-Controller (MVC) design philosophy.
     </description>
+    
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <version>3.0.1</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <instructions>
+                        <Bundle-Vendor>Speedment, Inc.</Bundle-Vendor>
+                        <Bundle-Description>
+                            An object-oriented code generator for Java that is 
+                            built using the Model-View-Controller (MVC) design 
+                            philosophy.
+                        </Bundle-Description>
+                        <Import-Package>
+                            org.osgi.framework,
+                            *;resolution:=optional 
+                        </Import-Package>
+                        <Export-Package>
+                            com.speedment.fika.codegen.controller.*,
+                            com.speedment.fika.codegen.model.*,
+                            com.speedment.fika.codegen.java.*,
+                            com.speedment.fika.codegen
+                        </Export-Package>
+                    </instructions>
+                </configuration>
+            </plugin>                            
+        </plugins>
+    </build>
 </project>
