@@ -34,7 +34,7 @@
     
     <groupId>com.speedment.fika</groupId>
     <artifactId>fika</artifactId>
-    <version>1.0.5-SNAPSHOT</version>
+    <version>1.0.6-SNAPSHOT</version>
     <packaging>pom</packaging>
     
     <!-- Modules -->
@@ -44,6 +44,7 @@
         <module>lazy</module>
         <module>mapstream</module>
         <module>codegen</module>
+        <module>logger</module>
     </modules>
     
     <!-- Project Metadata -->
