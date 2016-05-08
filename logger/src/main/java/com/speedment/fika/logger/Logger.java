@@ -41,10 +41,10 @@ public interface Logger {
 
     /**
      * Logs a <tt>message</tt> at the given
-     * {@link com.speedment.runtime.internal.logging.Level}. A present {@link Throwable}
+     * {@link com.speedment.fika.logger.Level}. A present {@link Throwable}
      * will also be logged.
      *
-     * @param level the non-null {@link com.speedment.runtime.internal.logging.Level} to
+     * @param level the non-null {@link com.speedment.fika.logger.Level} to
      * use
      * @param throwable the {@link Throwable} to log (if any)
      * @param message the non-null message to log
@@ -116,7 +116,7 @@ public interface Logger {
 
     /**
      * Logs a <tt>message</tt> at level
-     * {@link com.speedment.runtime.internal.logging.Level#TRACE}.
+     * {@link com.speedment.fika.logger.Level#TRACE}.
      *
      * @param message the non-null message to log
      */
@@ -126,7 +126,7 @@ public interface Logger {
 
     /**
      * Logs a <tt>throwable</tt> at level
-     * {@link com.speedment.runtime.internal.logging.Level#TRACE}.
+     * {@link com.speedment.fika.logger.Level#TRACE}.
      *
      * @param throwable the message to log
      * @throws java.lang.NullPointerException whenever <tt>level</tt> or
@@ -140,7 +140,7 @@ public interface Logger {
     /**
      * Logs a message based on the given <tt>format</tt> and enriched with the
      * passed <tt>arg</tt>
-     * at level {@link com.speedment.runtime.internal.logging.Level#TRACE}.
+     * at level {@link com.speedment.fika.logger.Level#TRACE}.
      *
      * @param format the format to log
      * @param arg the argument to pass to the format
@@ -152,7 +152,7 @@ public interface Logger {
     /**
      * Logs a message based on the given <tt>format</tt> and enriched with the
      * passed arguments at level
-     * {@link com.speedment.runtime.internal.logging.Level#TRACE}.
+     * {@link com.speedment.fika.logger.Level#TRACE}.
      *
      * @param format the format to log
      * @param arg1 the first argument to pass to the format
@@ -167,7 +167,7 @@ public interface Logger {
     /**
      * Logs a message based on the given <tt>format</tt> and enriched with the
      * passed arguments at level
-     * {@link com.speedment.runtime.internal.logging.Level#TRACE}.
+     * {@link com.speedment.fika.logger.Level#TRACE}.
      *
      * @param format the format to log
      * @param arg1 the first argument to pass to the format
@@ -183,7 +183,7 @@ public interface Logger {
     /**
      * Logs a message based on the given <tt>format</tt> and enriched with the
      * passed arguments at level
-     * {@link com.speedment.runtime.internal.logging.Level#TRACE}.
+     * {@link com.speedment.fika.logger.Level#TRACE}.
      *
      * @param format the format to log
      * @param arg1 the first argument to pass to the format
@@ -199,7 +199,7 @@ public interface Logger {
 
     /**
      * Logs a <tt>message</tt> at level
-     * {@link com.speedment.runtime.internal.logging.Level#TRACE}. The given throwable
+     * {@link com.speedment.fika.logger.Level#TRACE}. The given throwable
      * will also be logged if configured but does not need to be set.
      *
      * @param throwable the <tt>Throwable</tt> to log
@@ -214,7 +214,7 @@ public interface Logger {
     /**
      * Logs a message based on the given <tt>format</tt> and enriched with the
      * passed <tt>arg</tt>
-     * at level {@link com.speedment.runtime.internal.logging.Level#TRACE}. The given
+     * at level {@link com.speedment.fika.logger.Level#TRACE}. The given
      * throwable will also be logged if configured but does not need to be set.
      *
      * @param throwable the <tt>Throwable</tt> to log
@@ -230,7 +230,7 @@ public interface Logger {
     /**
      * Logs a message based on the given <tt>format</tt> and enriched with the
      * passed arguments at level
-     * {@link com.speedment.runtime.internal.logging.Level#TRACE}. The given throwable
+     * {@link com.speedment.fika.logger.Level#TRACE}. The given throwable
      * will also be logged if configured but does not need to be set.
      *
      * @param throwable the <tt>Throwable</tt> to log
@@ -247,7 +247,7 @@ public interface Logger {
     /**
      * Logs a message based on the given <tt>format</tt> and enriched with the
      * passed arguments at level
-     * {@link com.speedment.runtime.internal.logging.Level#TRACE}. The given throwable
+     * {@link com.speedment.fika.logger.Level#TRACE}. The given throwable
      * will also be logged if configured but does not need to be set.
      *
      * @param throwable the <tt>Throwable</tt> to log
@@ -265,7 +265,7 @@ public interface Logger {
     /**
      * Logs a message based on the given <tt>format</tt> and enriched with the
      * passed arguments at level
-     * {@link com.speedment.runtime.internal.logging.Level#TRACE}. The given throwable
+     * {@link com.speedment.fika.logger.Level#TRACE}. The given throwable
      * will also be logged if configured but does not need to be set.
      *
      * @param throwable the <tt>Throwable</tt> to log
@@ -283,7 +283,7 @@ public interface Logger {
 
     /**
      * Logs a <tt>message</tt> at level
-     * {@link com.speedment.runtime.internal.logging.Level#DEBUG}.
+     * {@link com.speedment.fika.logger.Level#DEBUG}.
      *
      * @param message the message to log
      * @throws java.lang.NullPointerException whenever <tt>level</tt> or
@@ -295,7 +295,7 @@ public interface Logger {
 
     /**
      * Logs a <tt>throwable</tt> at level
-     * {@link com.speedment.runtime.internal.logging.Level#DEBUG}.
+     * {@link com.speedment.fika.logger.Level#DEBUG}.
      *
      * @param throwable the message to log
      * @throws java.lang.NullPointerException whenever <tt>level</tt> or
@@ -309,7 +309,7 @@ public interface Logger {
     /**
      * Logs a message based on the given <tt>format</tt> and enriched with the
      * passed <tt>arg</tt>
-     * at level {@link com.speedment.runtime.internal.logging.Level#DEBUG}.
+     * at level {@link com.speedment.fika.logger.Level#DEBUG}.
      *
      * @param format the format to log
      * @param arg the argument to pass to the format
@@ -323,7 +323,7 @@ public interface Logger {
     /**
      * Logs a message based on the given <tt>format</tt> and enriched with the
      * passed arguments at level
-     * {@link com.speedment.runtime.internal.logging.Level#DEBUG}.
+     * {@link com.speedment.fika.logger.Level#DEBUG}.
      *
      * @param format the format to log
      * @param arg1 the first argument to pass to the format
@@ -338,7 +338,7 @@ public interface Logger {
     /**
      * Logs a message based on the given <tt>format</tt> and enriched with the
      * passed arguments at level
-     * {@link com.speedment.runtime.internal.logging.Level#DEBUG}.
+     * {@link com.speedment.fika.logger.Level#DEBUG}.
      *
      * @param format the format to log
      * @param arg1 the first argument to pass to the format
@@ -354,7 +354,7 @@ public interface Logger {
     /**
      * Logs a message based on the given <tt>format</tt> and enriched with the
      * passed arguments at level
-     * {@link com.speedment.runtime.internal.logging.Level#DEBUG}.
+     * {@link com.speedment.fika.logger.Level#DEBUG}.
      *
      * @param format the format to log
      * @param arg1 the first argument to pass to the format
@@ -370,7 +370,7 @@ public interface Logger {
 
     /**
      * Logs a <tt>message</tt> at level
-     * {@link com.speedment.runtime.internal.logging.Level#DEBUG}. The given throwable
+     * {@link com.speedment.fika.logger.Level#DEBUG}. The given throwable
      * will also be logged if configured but does not need to be set.
      *
      * @param throwable the <tt>Throwable</tt> to log
@@ -385,7 +385,7 @@ public interface Logger {
     /**
      * Logs a message based on the given <tt>format</tt> and enriched with the
      * passed <tt>arg</tt>
-     * at level {@link com.speedment.runtime.internal.logging.Level#DEBUG}. The given
+     * at level {@link com.speedment.fika.logger.Level#DEBUG}. The given
      * throwable will also be logged if configured but does not need to be set.
      *
      * @param throwable the <tt>Throwable</tt> to log
@@ -401,7 +401,7 @@ public interface Logger {
     /**
      * Logs a message based on the given <tt>format</tt> and enriched with the
      * passed arguments at level
-     * {@link com.speedment.runtime.internal.logging.Level#DEBUG}. The given throwable
+     * {@link com.speedment.fika.logger.Level#DEBUG}. The given throwable
      * will also be logged if configured but does not need to be set.
      *
      * @param throwable the <tt>Throwable</tt> to log
@@ -418,7 +418,7 @@ public interface Logger {
     /**
      * Logs a message based on the given <tt>format</tt> and enriched with the
      * passed arguments at level
-     * {@link com.speedment.runtime.internal.logging.Level#DEBUG}. The given throwable
+     * {@link com.speedment.fika.logger.Level#DEBUG}. The given throwable
      * will also be logged if configured but does not need to be set.
      *
      * @param throwable the <tt>Throwable</tt> to log
@@ -436,7 +436,7 @@ public interface Logger {
     /**
      * Logs a message based on the given <tt>format</tt> and enriched with the
      * passed arguments at level
-     * {@link com.speedment.runtime.internal.logging.Level#DEBUG}. The given throwable
+     * {@link com.speedment.fika.logger.Level#DEBUG}. The given throwable
      * will also be logged if configured but does not need to be set.
      *
      * @param throwable the <tt>Throwable</tt> to log
@@ -454,7 +454,7 @@ public interface Logger {
 
     /**
      * Logs a <tt>message</tt> at level
-     * {@link com.speedment.runtime.internal.logging.Level#INFO}.
+     * {@link com.speedment.fika.logger.Level#INFO}.
      *
      * @param message the message to log
      * @throws java.lang.NullPointerException whenever <tt>level</tt> or
@@ -466,7 +466,7 @@ public interface Logger {
 
     /**
      * Logs a <tt>throwable</tt> at level
-     * {@link com.speedment.runtime.internal.logging.Level#INFO}.
+     * {@link com.speedment.fika.logger.Level#INFO}.
      *
      * @param throwable the message to log
      * @throws java.lang.NullPointerException whenever <tt>level</tt> or
@@ -480,7 +480,7 @@ public interface Logger {
     /**
      * Logs a message based on the given <tt>format</tt> and enriched with the
      * passed <tt>arg</tt>
-     * at level {@link com.speedment.runtime.internal.logging.Level#INFO}.
+     * at level {@link com.speedment.fika.logger.Level#INFO}.
      *
      * @param format the format to log
      * @param arg the argument to pass to the format
@@ -494,7 +494,7 @@ public interface Logger {
     /**
      * Logs a message based on the given <tt>format</tt> and enriched with the
      * passed arguments at level
-     * {@link com.speedment.runtime.internal.logging.Level#INFO}.
+     * {@link com.speedment.fika.logger.Level#INFO}.
      *
      * @param format the format to log
      * @param arg1 the first argument to pass to the format
@@ -509,7 +509,7 @@ public interface Logger {
     /**
      * Logs a message based on the given <tt>format</tt> and enriched with the
      * passed arguments at level
-     * {@link com.speedment.runtime.internal.logging.Level#INFO}.
+     * {@link com.speedment.fika.logger.Level#INFO}.
      *
      * @param format the format to log
      * @param arg1 the first argument to pass to the format
@@ -525,7 +525,7 @@ public interface Logger {
     /**
      * Logs a message based on the given <tt>format</tt> and enriched with the
      * passed arguments at level
-     * {@link com.speedment.runtime.internal.logging.Level#INFO}.
+     * {@link com.speedment.fika.logger.Level#INFO}.
      *
      * @param format the format to log
      * @param arg1 the first argument to pass to the format
@@ -541,7 +541,7 @@ public interface Logger {
 
     /**
      * Logs a <tt>message</tt> at level
-     * {@link com.speedment.runtime.internal.logging.Level#INFO}. The given throwable
+     * {@link com.speedment.fika.logger.Level#INFO}. The given throwable
      * will also be logged if configured but does not need to be set.
      *
      * @param throwable the <tt>Throwable</tt> to log
@@ -556,7 +556,7 @@ public interface Logger {
     /**
      * Logs a message based on the given <tt>format</tt> and enriched with the
      * passed <tt>arg</tt>
-     * at level {@link com.speedment.runtime.internal.logging.Level#INFO}. The given
+     * at level {@link com.speedment.fika.logger.Level#INFO}. The given
      * throwable will also be logged if configured but does not need to be set.
      *
      * @param throwable the <tt>Throwable</tt> to log
@@ -572,7 +572,7 @@ public interface Logger {
     /**
      * Logs a message based on the given <tt>format</tt> and enriched with the
      * passed arguments at level
-     * {@link com.speedment.runtime.internal.logging.Level#INFO}. The given throwable
+     * {@link com.speedment.fika.logger.Level#INFO}. The given throwable
      * will also be logged if configured but does not need to be set.
      *
      * @param throwable the <tt>Throwable</tt> to log
@@ -589,7 +589,7 @@ public interface Logger {
     /**
      * Logs a message based on the given <tt>format</tt> and enriched with the
      * passed arguments at level
-     * {@link com.speedment.runtime.internal.logging.Level#INFO}. The given throwable
+     * {@link com.speedment.fika.logger.Level#INFO}. The given throwable
      * will also be logged if configured but does not need to be set.
      *
      * @param throwable the <tt>Throwable</tt> to log
@@ -607,7 +607,7 @@ public interface Logger {
     /**
      * Logs a message based on the given <tt>format</tt> and enriched with the
      * passed arguments at level
-     * {@link com.speedment.runtime.internal.logging.Level#INFO}. The given throwable
+     * {@link com.speedment.fika.logger.Level#INFO}. The given throwable
      * will also be logged if configured but does not need to be set.
      *
      * @param throwable the <tt>Throwable</tt> to log
@@ -625,7 +625,7 @@ public interface Logger {
 
     /**
      * Logs a <tt>message</tt> at level
-     * {@link com.speedment.runtime.internal.logging.Level#WARN}.
+     * {@link com.speedment.fika.logger.Level#WARN}.
      *
      * @param message the message to log
      * @throws java.lang.NullPointerException whenever <tt>level</tt> or
@@ -637,7 +637,7 @@ public interface Logger {
 
     /**
      * Logs a <tt>throwable</tt> at level
-     * {@link com.speedment.runtime.internal.logging.Level#INFO}.
+     * {@link com.speedment.fika.logger.Level#INFO}.
      *
      * @param throwable the message to log
      * @throws java.lang.NullPointerException whenever <tt>level</tt> or
@@ -651,7 +651,7 @@ public interface Logger {
     /**
      * Logs a message based on the given <tt>format</tt> and enriched with the
      * passed <tt>arg</tt>
-     * at level {@link com.speedment.runtime.internal.logging.Level#WARN}.
+     * at level {@link com.speedment.fika.logger.Level#WARN}.
      *
      * @param format the format to log
      * @param arg the argument to pass to the format
@@ -665,7 +665,7 @@ public interface Logger {
     /**
      * Logs a message based on the given <tt>format</tt> and enriched with the
      * passed arguments at level
-     * {@link com.speedment.runtime.internal.logging.Level#WARN}.
+     * {@link com.speedment.fika.logger.Level#WARN}.
      *
      * @param format the format to log
      * @param arg1 the first argument to pass to the format
@@ -680,7 +680,7 @@ public interface Logger {
     /**
      * Logs a message based on the given <tt>format</tt> and enriched with the
      * passed arguments at level
-     * {@link com.speedment.runtime.internal.logging.Level#WARN}.
+     * {@link com.speedment.fika.logger.Level#WARN}.
      *
      * @param format the format to log
      * @param arg1 the first argument to pass to the format
@@ -696,7 +696,7 @@ public interface Logger {
     /**
      * Logs a message based on the given <tt>format</tt> and enriched with the
      * passed arguments at level
-     * {@link com.speedment.runtime.internal.logging.Level#WARN}.
+     * {@link com.speedment.fika.logger.Level#WARN}.
      *
      * @param format the format to log
      * @param arg1 the first argument to pass to the format
@@ -712,7 +712,7 @@ public interface Logger {
 
     /**
      * Logs a <tt>message</tt> at level
-     * {@link com.speedment.runtime.internal.logging.Level#WARN}. The given throwable
+     * {@link com.speedment.fika.logger.Level#WARN}. The given throwable
      * will also be logged if configured but does not need to be set.
      *
      * @param throwable the <tt>Throwable</tt> to log
@@ -727,7 +727,7 @@ public interface Logger {
     /**
      * Logs a message based on the given <tt>format</tt> and enriched with the
      * passed <tt>arg</tt>
-     * at level {@link com.speedment.runtime.internal.logging.Level#WARN}. The given
+     * at level {@link com.speedment.fika.logger.Level#WARN}. The given
      * throwable will also be logged if configured but does not need to be set.
      *
      * @param throwable the <tt>Throwable</tt> to log
@@ -743,7 +743,7 @@ public interface Logger {
     /**
      * Logs a message based on the given <tt>format</tt> and enriched with the
      * passed arguments at level
-     * {@link com.speedment.runtime.internal.logging.Level#WARN}. The given throwable
+     * {@link com.speedment.fika.logger.Level#WARN}. The given throwable
      * will also be logged if configured but does not need to be set.
      *
      * @param throwable the <tt>Throwable</tt> to log
@@ -760,7 +760,7 @@ public interface Logger {
     /**
      * Logs a message based on the given <tt>format</tt> and enriched with the
      * passed arguments at level
-     * {@link com.speedment.runtime.internal.logging.Level#WARN}. The given throwable
+     * {@link com.speedment.fika.logger.Level#WARN}. The given throwable
      * will also be logged if configured but does not need to be set.
      *
      * @param throwable the <tt>Throwable</tt> to log
@@ -778,7 +778,7 @@ public interface Logger {
     /**
      * Logs a message based on the given <tt>format</tt> and enriched with the
      * passed arguments at level
-     * {@link com.speedment.runtime.internal.logging.Level#WARN}. The given throwable
+     * {@link com.speedment.fika.logger.Level#WARN}. The given throwable
      * will also be logged if configured but does not need to be set.
      *
      * @param throwable the <tt>Throwable</tt> to log
@@ -796,7 +796,7 @@ public interface Logger {
 
     /**
      * Logs a <tt>message</tt> at level
-     * {@link com.speedment.runtime.internal.logging.Level#ERROR}.
+     * {@link com.speedment.fika.logger.Level#ERROR}.
      *
      * @param message the message to log
      * @throws java.lang.NullPointerException whenever <tt>level</tt> or
@@ -808,7 +808,7 @@ public interface Logger {
 
     /**
      * Logs a <tt>throwable</tt> at level
-     * {@link com.speedment.runtime.internal.logging.Level#ERROR}.
+     * {@link com.speedment.fika.logger.Level#ERROR}.
      *
      * @param throwable the message to log
      * @throws java.lang.NullPointerException whenever <tt>level</tt> or
@@ -822,7 +822,7 @@ public interface Logger {
     /**
      * Logs a message based on the given <tt>format</tt> and enriched with the
      * passed <tt>arg</tt>
-     * at level {@link com.speedment.runtime.internal.logging.Level#ERROR}.
+     * at level {@link com.speedment.fika.logger.Level#ERROR}.
      *
      * @param format the format to log
      * @param arg the argument to pass to the format
@@ -836,7 +836,7 @@ public interface Logger {
     /**
      * Logs a message based on the given <tt>format</tt> and enriched with the
      * passed arguments at level
-     * {@link com.speedment.runtime.internal.logging.Level#ERROR}.
+     * {@link com.speedment.fika.logger.Level#ERROR}.
      *
      * @param format the format to log
      * @param arg1 the first argument to pass to the format
@@ -851,7 +851,7 @@ public interface Logger {
     /**
      * Logs a message based on the given <tt>format</tt> and enriched with the
      * passed arguments at level
-     * {@link com.speedment.runtime.internal.logging.Level#ERROR}.
+     * {@link com.speedment.fika.logger.Level#ERROR}.
      *
      * @param format the format to log
      * @param arg1 the first argument to pass to the format
@@ -867,7 +867,7 @@ public interface Logger {
     /**
      * Logs a message based on the given <tt>format</tt> and enriched with the
      * passed arguments at level
-     * {@link com.speedment.runtime.internal.logging.Level#ERROR}.
+     * {@link com.speedment.fika.logger.Level#ERROR}.
      *
      * @param format the format to log
      * @param arg1 the first argument to pass to the format
@@ -883,7 +883,7 @@ public interface Logger {
 
     /**
      * Logs a <tt>message</tt> at level
-     * {@link com.speedment.runtime.internal.logging.Level#ERROR}. The given throwable
+     * {@link com.speedment.fika.logger.Level#ERROR}. The given throwable
      * will also be logged if configured but does not need to be set.
      *
      * @param throwable the <tt>Throwable</tt> to log
@@ -898,7 +898,7 @@ public interface Logger {
     /**
      * Logs a message based on the given <tt>format</tt> and enriched with the
      * passed <tt>arg</tt>
-     * at level {@link com.speedment.runtime.internal.logging.Level#ERROR}. The given
+     * at level {@link com.speedment.fika.logger.Level#ERROR}. The given
      * throwable will also be logged if configured but does not need to be set.
      *
      * @param throwable the <tt>Throwable</tt> to log
@@ -914,7 +914,7 @@ public interface Logger {
     /**
      * Logs a message based on the given <tt>format</tt> and enriched with the
      * passed arguments at level
-     * {@link com.speedment.runtime.internal.logging.Level#ERROR}. The given throwable
+     * {@link com.speedment.fika.logger.Level#ERROR}. The given throwable
      * will also be logged if configured but does not need to be set.
      *
      * @param throwable the <tt>Throwable</tt> to log
@@ -931,7 +931,7 @@ public interface Logger {
     /**
      * Logs a message based on the given <tt>format</tt> and enriched with the
      * passed arguments at level
-     * {@link com.speedment.runtime.internal.logging.Level#ERROR}. The given throwable
+     * {@link com.speedment.fika.logger.Level#ERROR}. The given throwable
      * will also be logged if configured but does not need to be set.
      *
      * @param throwable the <tt>Throwable</tt> to log
@@ -949,7 +949,7 @@ public interface Logger {
     /**
      * Logs a message based on the given <tt>format</tt> and enriched with the
      * passed arguments at level
-     * {@link com.speedment.runtime.internal.logging.Level#ERROR}. The given throwable
+     * {@link com.speedment.fika.logger.Level#ERROR}. The given throwable
      * will also be logged if configured but does not need to be set.
      *
      * @param throwable the <tt>Throwable</tt> to log
@@ -967,7 +967,7 @@ public interface Logger {
 
     /**
      * Logs a <tt>message</tt> at level
-     * {@link com.speedment.runtime.internal.logging.Level#FATAL}.
+     * {@link com.speedment.fika.logger.Level#FATAL}.
      *
      * @param message the message to log
      * @throws java.lang.NullPointerException whenever <tt>level</tt> or
@@ -979,7 +979,7 @@ public interface Logger {
 
     /**
      * Logs a <tt>throwable</tt> at level
-     * {@link com.speedment.runtime.internal.logging.Level#FATAL}.
+     * {@link com.speedment.fika.logger.Level#FATAL}.
      *
      * @param throwable the message to log
      * @throws java.lang.NullPointerException whenever <tt>level</tt> or
@@ -993,7 +993,7 @@ public interface Logger {
     /**
      * Logs a message based on the given <tt>format</tt> and enriched with the
      * passed <tt>arg</tt>
-     * at level {@link com.speedment.runtime.internal.logging.Level#FATAL}.
+     * at level {@link com.speedment.fika.logger.Level#FATAL}.
      *
      * @param format the format to log
      * @param arg the argument to pass to the format
@@ -1007,7 +1007,7 @@ public interface Logger {
     /**
      * Logs a message based on the given <tt>format</tt> and enriched with the
      * passed arguments at level
-     * {@link com.speedment.runtime.internal.logging.Level#FATAL}.
+     * {@link com.speedment.fika.logger.Level#FATAL}.
      *
      * @param format the format to log
      * @param arg1 the first argument to pass to the format
@@ -1022,7 +1022,7 @@ public interface Logger {
     /**
      * Logs a message based on the given <tt>format</tt> and enriched with the
      * passed arguments at level
-     * {@link com.speedment.runtime.internal.logging.Level#FATAL}.
+     * {@link com.speedment.fika.logger.Level#FATAL}.
      *
      * @param format the format to log
      * @param arg1 the first argument to pass to the format
@@ -1038,7 +1038,7 @@ public interface Logger {
     /**
      * Logs a message based on the given <tt>format</tt> and enriched with the
      * passed arguments at level
-     * {@link com.speedment.runtime.internal.logging.Level#FATAL}.
+     * {@link com.speedment.fika.logger.Level#FATAL}.
      *
      * @param format the format to log
      * @param arg1 the first argument to pass to the format
@@ -1054,7 +1054,7 @@ public interface Logger {
 
     /**
      * Logs a <tt>message</tt> at level
-     * {@link com.speedment.runtime.internal.logging.Level#FATAL}. The given throwable
+     * {@link com.speedment.fika.logger.Level#FATAL}. The given throwable
      * will also be logged if configured but does not need to be set.
      *
      * @param throwable the <tt>Throwable</tt> to log
@@ -1069,7 +1069,7 @@ public interface Logger {
     /**
      * Logs a message based on the given <tt>format</tt> and enriched with the
      * passed <tt>arg</tt>
-     * at level {@link com.speedment.runtime.internal.logging.Level#FATAL}. The given
+     * at level {@link com.speedment.fika.logger.Level#FATAL}. The given
      * throwable will also be logged if configured but does not need to be set.
      *
      * @param throwable the <tt>Throwable</tt> to log
@@ -1085,7 +1085,7 @@ public interface Logger {
     /**
      * Logs a message based on the given <tt>format</tt> and enriched with the
      * passed arguments at level
-     * {@link com.speedment.runtime.internal.logging.Level#FATAL}. The given throwable
+     * {@link com.speedment.fika.logger.Level#FATAL}. The given throwable
      * will also be logged if configured but does not need to be set.
      *
      * @param throwable the <tt>Throwable</tt> to log
@@ -1102,7 +1102,7 @@ public interface Logger {
     /**
      * Logs a message based on the given <tt>format</tt> and enriched with the
      * passed arguments at level
-     * {@link com.speedment.runtime.internal.logging.Level#FATAL}. The given throwable
+     * {@link com.speedment.fika.logger.Level#FATAL}. The given throwable
      * will also be logged if configured but does not need to be set.
      *
      * @param throwable the <tt>Throwable</tt> to log
@@ -1120,7 +1120,7 @@ public interface Logger {
     /**
      * Logs a message based on the given <tt>format</tt> and enriched with the
      * passed arguments at level
-     * {@link com.speedment.runtime.internal.logging.Level#FATAL}. The given throwable
+     * {@link com.speedment.fika.logger.Level#FATAL}. The given throwable
      * will also be logged if configured but does not need to be set.
      *
      * @param throwable the <tt>Throwable</tt> to log, or null
