@@ -27,6 +27,16 @@ An utility used in [Speedment](https://github.com/speedment/speedment) that can 
 </dependency>
 ```
 
+### [Logger](https://github.com/speedment/fika/wiki/Logger)
+An lightweight logging framework inspired by Tengil.
+```xml
+<dependency>
+    <groupId>com.speedment.fika</groupId>
+    <artifactId>logger</artifactId>
+    <version>1.0.0</version>
+</dependency>
+```
+
 ### [MapStream](https://github.com/speedment/fika/wiki/MapStream)
 An utility class that expands the Java 8 Stream API to work with native Key-Value pair collections like `Map`. 
 ```xml
