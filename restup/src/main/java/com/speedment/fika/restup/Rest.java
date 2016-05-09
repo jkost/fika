@@ -29,8 +29,8 @@ import java.util.concurrent.CompletableFuture;
  *     Rest rest = Rest.connect("127.0.0.1", 8080);
  * 
  *     CompletableFuture&lt;Response&gt; future = rest.post("user", 
- *         Param.of("firstname", "Adam"), 
- *         Param.of("lastname", "Adamsson")
+ *         Param.param("firstname", "Adam"), 
+ *         Param.param("lastname", "Adamsson")
  *     );
  * 
  *     future.get();
