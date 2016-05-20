@@ -19,6 +19,8 @@ package com.speedment.fika.codegen.internal.java.value;
 import com.speedment.fika.codegen.Generator;
 import com.speedment.fika.codegen.Transform;
 import com.speedment.fika.codegen.internal.model.value.NumberValue;
+import java.math.BigDecimal;
+import java.math.BigInteger;
 import static java.util.Objects.requireNonNull;
 import java.util.Optional;
 
@@ -37,6 +39,43 @@ public final class NumberValueView implements Transform<NumberValue, String> {
         requireNonNull(gen);
         requireNonNull(model);
         
-		return Optional.of(model.getValue().toString());
+        final Number num = requireNonNull(model.getValue());
+        final StringBuilder result = new StringBuilder();
+        
+        if (num instanceof Byte) {
+            result.append(Byte.toString(num.byteValue()));
+        } else if (num instanceof Short) {
+            result.append(Short.toString(num.shortValue()));
+        } else if (num instanceof Integer) {
+            result.append(Integer.toString(num.intValue()));
+        } else if (num instanceof Long) {
+            result.append(Long.toString(num.longValue())).append("l");
+        } else if (num instanceof Float) {
+            result.append(Float.toString(num.floatValue())).append("f");
+        } else if (num instanceof Double) {
+            result.append(Double.toString(num.doubleValue())).append("d");
+        } else if (num instanceof BigInteger) {
+            result.append("new ");
+            
+            if (!gen.getDependencyMgr().isLoaded(BigDecimal.class.getName())) {
+                result.append("java.math.");
+            }
+            
+            result.append("BigInteger(\"").append(((BigInteger) num).toString()).append("\")");
+        } else if (num instanceof BigDecimal) {
+            result.append("new ");
+            
+            if (!gen.getDependencyMgr().isLoaded(BigDecimal.class.getName())) {
+                result.append("java.math.");
+            }
+            
+            result.append("BigDecimal(\"").append(((BigDecimal) num).toPlainString()).append("\")");
+        } else {
+            throw new UnsupportedOperationException(
+                "Unknown Number implementation '" + num.getClass().getName() + "'."
+            );
+        }
+        
+		return Optional.of(result.toString());
 	}
 }
