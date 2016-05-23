@@ -22,6 +22,7 @@ import com.speedment.fika.codegen.model.trait.HasAnnotationUsage;
 import static com.speedment.fika.codegen.internal.util.Formatting.EMPTY;
 import static com.speedment.fika.codegen.internal.util.Formatting.nl;
 import static com.speedment.fika.codegen.internal.util.CollectorUtil.joinIfNotEmpty;
+import static com.speedment.fika.codegen.internal.util.Formatting.SPACE;
 
 /**
  * A trait with the functionality to render models with the trait 
@@ -31,8 +32,8 @@ import static com.speedment.fika.codegen.internal.util.CollectorUtil.joinIfNotEm
  * @param <M>  The model type
  * @see        Transform
  */
-public interface HasAnnotationUsageView<M extends HasAnnotationUsage<M>> extends 
-    Transform<M, String> {
+public interface HasAnnotationUsageView<M extends HasAnnotationUsage<M>> 
+    extends Transform<M, String> {
     
     /**
      * Renders all annotations in the specified model separated by new-line
@@ -45,5 +46,17 @@ public interface HasAnnotationUsageView<M extends HasAnnotationUsage<M>> extends
     default String renderAnnotations(Generator gen, M model) {
         return gen.onEach(model.getAnnotations())
             .collect(joinIfNotEmpty(nl(), EMPTY, nl()));
+    }
+    
+    /**
+     * Renders all annotations in the specified model separated by space only.
+     * 
+     * @param gen    the generator
+     * @param model  the model with the annotations
+     * @return       the generated code
+     */
+    default String renderAnnotationsInline(Generator gen, M model) {
+        return gen.onEach(model.getAnnotations())
+            .collect(joinIfNotEmpty(SPACE, EMPTY, SPACE));
     }
 }

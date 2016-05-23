@@ -32,8 +32,8 @@ import java.util.stream.Stream;
  */
 public final class AnnotationUsageView implements Transform<AnnotationUsage, String> {
 
-    private final static String PSTART = "(",
-            EQUALS = " = ";
+    private final static String 
+        EQUALS = " = ", SEPARATOR = ", ";
 
     /**
      * {@inheritDoc}
@@ -44,20 +44,22 @@ public final class AnnotationUsageView implements Transform<AnnotationUsage, Str
         requireNonNull(model);
 
         final Optional<String> value = gen.on(model.getValue());
-        final Stream<String> valueStream = value.isPresent() ? Stream.of(value.get()) : Stream.empty();
+        final Stream<String> valueStream = value.isPresent() 
+            ? Stream.of(value.get()) 
+            : Stream.empty();
 
         return Optional.of(
-                AT + gen.on(model.getType()).get()
-                + Stream.of(
-                        model.getValues().stream().map(e -> e.getKey() + gen.on(e.getValue()).map(s -> EQUALS + s).orElse(EMPTY)),
-                        valueStream
-                ).flatMap(s -> s).collect(
-                joinIfNotEmpty(
-                        cnl() + tab() + tab(),
-                        PSTART,
-                        PE
-                )
-        )
+            AT + gen.on(model.getType()).get()
+            + Stream.of(
+                model.getValues().stream()
+                    .map(e -> e.getKey() + 
+                        gen.on(e.getValue())
+                            .map(s -> EQUALS + s)
+                            .orElse(EMPTY)
+                    ),
+                valueStream
+            ).flatMap(s -> s)
+            .collect(joinIfNotEmpty(SEPARATOR, PS, PE))
         );
     }
 }

@@ -18,6 +18,11 @@ package com.speedment.fika.codegen.internal.java;
 
 import com.speedment.fika.codegen.Generator;
 import com.speedment.fika.codegen.Transform;
+import com.speedment.fika.codegen.internal.java.trait.HasAnnotationUsageView;
+import com.speedment.fika.codegen.internal.java.trait.HasJavadocView;
+import com.speedment.fika.codegen.internal.java.trait.HasNameView;
+import com.speedment.fika.codegen.internal.java.trait.HasTypeView;
+import com.speedment.fika.codegen.internal.java.trait.HasValueView;
 import com.speedment.fika.codegen.model.InterfaceField;
 import static com.speedment.fika.codegen.model.modifier.Modifier.FINAL;
 import static com.speedment.fika.codegen.internal.util.Formatting.*;
@@ -29,7 +34,12 @@ import java.util.Optional;
  * 
  * @author Emil Forslund
  */
-public final class InterfaceFieldView implements Transform<InterfaceField, String> {
+public final class InterfaceFieldView implements Transform<InterfaceField, String>,
+        HasNameView<InterfaceField>, 
+        HasJavadocView<InterfaceField>, 
+        HasTypeView<InterfaceField>,
+        HasValueView<InterfaceField>, 
+        HasAnnotationUsageView<InterfaceField> {
     
     /**
      * {@inheritDoc}
@@ -39,13 +49,16 @@ public final class InterfaceFieldView implements Transform<InterfaceField, Strin
         requireNonNull(gen);
         requireNonNull(model);
         
-		return Optional.of(
-			gen.on(model.getJavadoc()).orElse(EMPTY) +	
-			(model.getModifiers().contains(FINAL) ?
-				gen.on(FINAL).get() + SPACE : EMPTY
-			) +		
-			gen.on(model.getType()).orElse(EMPTY) + SPACE +
-			model.getName()
+        return Optional.of(
+			renderJavadoc(gen, model) +
+            renderAnnotationsInline(gen, model) +
+			(model.getModifiers().contains(FINAL) 
+                ? gen.on(FINAL).get() + SPACE 
+                : EMPTY
+            ) +
+			renderType(gen, model) +
+			renderName(gen, model) +
+			renderValue(gen, model)
 		);
 	}
 }

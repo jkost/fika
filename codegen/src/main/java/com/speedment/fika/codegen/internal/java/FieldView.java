@@ -33,9 +33,13 @@ import java.util.Optional;
  * 
  * @author Emil Forslund
  */
-public final class FieldView implements Transform<Field, String>, HasNameView<Field>, 
-    HasJavadocView<Field>, HasModifiersView<Field>, HasTypeView<Field>,
-    HasValueView<Field>, HasAnnotationUsageView<Field> {
+public final class FieldView implements Transform<Field, String>, 
+        HasNameView<Field>, 
+        HasJavadocView<Field>, 
+        HasModifiersView<Field>, 
+        HasTypeView<Field>,
+        HasValueView<Field>, 
+        HasAnnotationUsageView<Field> {
 
     /**
      * {@inheritDoc}
@@ -47,7 +51,7 @@ public final class FieldView implements Transform<Field, String>, HasNameView<Fi
         
 		return Optional.of(
 			renderJavadoc(gen, model) +
-            renderAnnotations(gen, model) +
+            renderAnnotationsInline(gen, model) +
 			renderModifiers(gen, model) +
 			renderType(gen, model) +
 			renderName(gen, model) +
