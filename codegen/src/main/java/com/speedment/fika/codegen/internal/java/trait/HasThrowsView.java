@@ -19,8 +19,6 @@ package com.speedment.fika.codegen.internal.java.trait;
 import com.speedment.fika.codegen.Generator;
 import com.speedment.fika.codegen.Transform;
 import com.speedment.fika.codegen.model.trait.HasThrows;
-import static com.speedment.fika.codegen.internal.util.Formatting.COMMA_SPACE;
-import static com.speedment.fika.codegen.internal.util.Formatting.EMPTY;
 import static com.speedment.fika.codegen.internal.util.CollectorUtil.joinIfNotEmpty;
 
 /**
@@ -43,6 +41,6 @@ public interface HasThrowsView<M extends HasThrows<M>> extends
      */
     default String renderThrows(Generator gen, M model) {
         return gen.onEach(model.getExceptions())
-            .collect(joinIfNotEmpty(COMMA_SPACE, "throws ", EMPTY));
+            .collect(joinIfNotEmpty(", ", "throws ", " "));
     }
 }

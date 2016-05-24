@@ -133,7 +133,7 @@ abstract class ClassOrInterfaceView<M extends ClassOrInterface<M>> implements
                 
             // Code
             block(nl() + separate(
-				onBeforeFields(gen, model), // Enums have constants here.´
+				onBeforeFields(gen, model), // Enums have constants here.
                 renderFields(gen, model),
 				renderConstructors(gen, model),
                 renderInitalizers(gen, model),
@@ -151,11 +151,10 @@ abstract class ClassOrInterfaceView<M extends ClassOrInterface<M>> implements
      * @param strings  the strings to combine
      * @return         the combined string
      */
-	private String separate(Object... strings) {
+	private String separate(String... strings) {
         requireNonNullElements(strings);
 		return Stream.of(strings)
-			.map(Object::toString)
-			.filter(s -> s.length() > 0)
+			.filter(s -> !s.isEmpty())
 			.collect(joining(dnl()));
 	}
 }

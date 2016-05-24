@@ -18,30 +18,35 @@ package com.speedment.fika.codegen.internal.java;
 
 import com.speedment.fika.codegen.Generator;
 import com.speedment.fika.codegen.Transform;
-import static com.speedment.fika.codegen.internal.util.CollectorUtil.joinIfNotEmpty;
+import com.speedment.fika.codegen.internal.java.trait.HasAnnotationUsageView;
+import com.speedment.fika.codegen.internal.java.trait.HasCodeView;
+import com.speedment.fika.codegen.internal.java.trait.HasFieldsView;
+import com.speedment.fika.codegen.internal.java.trait.HasGenericsView;
+import com.speedment.fika.codegen.internal.java.trait.HasJavadocView;
+import com.speedment.fika.codegen.internal.java.trait.HasNameView;
+import com.speedment.fika.codegen.internal.java.trait.HasThrowsView;
+import com.speedment.fika.codegen.internal.java.trait.HasTypeView;
 import com.speedment.fika.codegen.model.InterfaceMethod;
 import static com.speedment.fika.codegen.model.modifier.Modifier.*;
-import static com.speedment.fika.codegen.internal.util.Formatting.COMMA_SPACE;
 import static com.speedment.fika.codegen.internal.util.Formatting.EMPTY;
-import static com.speedment.fika.codegen.internal.util.Formatting.PE;
-import static com.speedment.fika.codegen.internal.util.Formatting.PS;
-import static com.speedment.fika.codegen.internal.util.Formatting.SC;
 import static com.speedment.fika.codegen.internal.util.Formatting.SPACE;
-import static com.speedment.fika.codegen.internal.util.Formatting.block;
-import static com.speedment.fika.codegen.internal.util.Formatting.ifelse;
-import static com.speedment.fika.codegen.internal.util.Formatting.nl;
 import static java.util.Objects.requireNonNull;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 /**
  * Transforms from an {@link InterfaceMethod} to java code.
  * 
  * @author Emil Forslund
  */
-public final class InterfaceMethodView implements Transform<InterfaceMethod, String> {
-    
-    private final static String THROWS = " throws ";
+public final class InterfaceMethodView implements Transform<InterfaceMethod, String>,
+        HasNameView<InterfaceMethod>, 
+        HasTypeView<InterfaceMethod>,
+        HasThrowsView<InterfaceMethod>,
+        HasGenericsView<InterfaceMethod>,
+        HasFieldsView<InterfaceMethod>,
+        HasJavadocView<InterfaceMethod>, 
+        HasAnnotationUsageView<InterfaceMethod>,
+        HasCodeView<InterfaceMethod> {
     
     /**
      * {@inheritDoc}
@@ -51,30 +56,28 @@ public final class InterfaceMethodView implements Transform<InterfaceMethod, Str
         requireNonNull(gen);
         requireNonNull(model);
         
-		return Optional.of(ifelse(gen.on(model.getJavadoc()), s -> s + nl(), EMPTY) +
-            
-            gen.onEach(model.getAnnotations()).collect(joinIfNotEmpty(nl(), EMPTY, nl())) +
-					
-			// The only modifiers allowed are default and static
+        final Optional<String> body = Optional.of(renderCode(gen, model))
+            .filter(s -> model.getModifiers().contains(DEFAULT)
+                      || model.getModifiers().contains(STATIC)
+            );
+        
+        return Optional.of(
+            renderJavadoc(gen, model) +
+            renderAnnotations(gen, model) +
 			(model.getModifiers().contains(DEFAULT) ? gen.on(DEFAULT).orElse(EMPTY) + SPACE : EMPTY) +
 			(model.getModifiers().contains(STATIC) ? gen.on(STATIC).orElse(EMPTY) + SPACE : EMPTY) +
-			
-			gen.on(model.getType()).orElse(EMPTY) + SPACE +
-			model.getName() +
-			gen.onEach(model.getFields()).collect(
-				Collectors.joining(COMMA_SPACE, PS, PE)
-			) +
-            
-            gen.onEach(model.getExceptions()).collect(joinIfNotEmpty(COMMA_SPACE, THROWS, EMPTY)) +
-					
-			// Append body only if it is either default or static.
-			(model.getModifiers().contains(DEFAULT) 
-			|| model.getModifiers().contains(STATIC) ?
-			SPACE + block(
-				model.getCode().stream().collect(
-					Collectors.joining(nl())
-				)
-			) : SC)
-		);
+            renderGenerics(gen, model) +
+            renderType(gen, model) +
+            renderName(gen, model) + "(" +
+            renderFields(gen, model) + ")" +
+                (body.isPresent() ? " " : "") +
+            renderThrows(gen, model) + 
+            body.orElse(";")
+        );
 	}
+
+    @Override
+    public String fieldSeparator() {
+        return ", ";
+    }
 }
