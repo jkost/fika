@@ -3,13 +3,10 @@ package com.speedment.fika.reactor.plugin.translator;
 import com.speedment.Speedment;
 import com.speedment.codegen.Generator;
 import com.speedment.codegen.model.File;
-import com.speedment.codegen.model.Generic;
 import com.speedment.codegen.model.Interface;
 import com.speedment.codegen.model.Type;
 import com.speedment.config.db.Table;
-import com.speedment.fika.reactor.MaterializedView;
 import com.speedment.internal.core.code.DefaultJavaClassTranslator;
-import static com.speedment.fika.reactor.plugin.translator.TranslatorUtil.mergingColumnType;
 
 /**
  * Translator that generates the interface for the table specific materialized
